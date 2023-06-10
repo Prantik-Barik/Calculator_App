@@ -1,0 +1,103 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap");
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background-color: #DD58D6;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    font-family: 'Poppins',sans-serif;
+}
+
+.container{
+    background-color: white;
+    padding: 2rem 7rem;
+    border-radius: 10px;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Animation */
+
+.container.start .user-result {
+    transform-origin: left;
+    animation: userShake 0.7s ease infinite;
+  }
+  @keyframes userShake {
+    50% {
+      transform: rotate(10deg);
+    }
+  }
+  
+.container.start .comp-result {
+    transform-origin: right;
+    animation: cpuShake 0.7s ease infinite;
+  }
+  @keyframes cpuShake {
+    50% {
+      transform: rotate(-10deg);
+    }
+  }
+  
+
+/* Playing Section */
+
+.results-img{
+    display: flex;
+    gap: 7rem;
+}
+.results-img img{
+    width: 100px;
+}
+
+.results-img .user-result img{
+    transform: rotate(90deg);
+}
+
+.results-img .comp-result img{
+    transform: rotate(-90deg) rotateY(180deg);
+}
+
+.result{
+    text-align: center;
+    font-size: 1.8rem;
+    color:#7d2ae8;
+    margin-top: 1.5rem;
+}
+
+/* Option Section */
+
+.option-img img{
+    width: 50px;
+}
+
+.option-field {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 2.5rem;
+}
+
+.option-img {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    opacity: 0.5;
+    cursor: pointer;
+    transition: opacity 0.3s ease;
+}
+
+.option-img:hover,.option-img.active {
+    opacity: 1;
+}
+
+.option-img p{
+    text-align: center;
+    font-size: 1rem;
+    color:#7d2ae8;
+    margin-top: 1rem;
+}
